@@ -2,8 +2,8 @@
 
 Rockies-only retail analytics, reporting, inventory management, podium management, and the existing Rockies store survey. The application is isolated from all other Jibe projects and contains only Rockies-specific sample data.
 
-- Public site: https://isaacsharrison.github.io/rockies-retail-suite/
-- GitHub repository: https://github.com/isaacsharrison/rockies-retail-suite
+- Public site: https://jiberetail.github.io/rockies-retail-suite/
+- GitHub repository: https://github.com/jiberetail/rockies-retail-suite
 
 ## Source
 
