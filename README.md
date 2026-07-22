@@ -1,6 +1,6 @@
 # Colorado Rockies Jibe Retail Suite
 
-Rockies-only retail analytics, reporting, inventory management, podium management, and the existing Rockies store survey. The application is isolated from all other Jibe projects and contains only Rockies-specific sample data.
+Rockies-only retail analytics, reporting, inventory management, podium management, and a 1080×1920 portrait kiosk survey. The application is isolated from all other Jibe projects and contains only Rockies-specific data and assets.
 
 - Public site: https://jiberetail.github.io/rockies-retail-suite/
 - GitHub repository: https://github.com/jiberetail/rockies-retail-suite
@@ -19,7 +19,19 @@ Rockies-only retail analytics, reporting, inventory management, podium managemen
 - `/reports` — report library
 - `/reports/:reportId` — full report view
 - `/settings` — Rockies inventory and podium management
-- `/v3` — existing Rockies store survey; portrait-kiosk redesign is a separate later phase
+- `/v3` — Rockies Dugout Store portrait-kiosk survey
+
+## Kiosk survey
+
+The survey mirrors the approved MLB kiosk flow while remaining a separate Rockies implementation. It uses Colorado branding and Coors Field imagery, a cinematic Hunter Goodman splash, a fixed Rockies merchandise path, product search and incremental loading, online-product QR codes, and Rockies/Denver-specific response choices.
+
+The checked-in merchandise snapshot contains only Colorado Rockies products from the four survey categories on Fanatics: jerseys, hats, sweatshirts, and T-shirts. Refresh it with:
+
+```sh
+pnpm catalog:sync
+```
+
+The Hunter Goodman splash currently streams an official MLB-hosted preview. Confirm production display and derivative-use clearance before unattended commercial deployment.
 
 ## Local development
 
