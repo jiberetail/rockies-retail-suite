@@ -482,13 +482,13 @@ export function RockiesKioskSurvey() {
               initial={{ opacity: 0, y: -12, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.58, ease: "easeOut" }}
-              className="absolute left-1/2 top-[1.2%] z-10 -translate-x-1/2"
+              className="absolute left-1/2 top-[2.2%] z-10 -translate-x-1/2"
               style={{
-                width: "116%",
-                maxHeight: "29vh",
+                width: "58%",
+                maxHeight: "14.5vh",
                 objectFit: "contain",
                 filter:
-                  "drop-shadow(0 0.6vh 0.9vh rgba(255,255,255,0.32)) drop-shadow(0 1.4vh 3.6vh rgba(0,0,0,0.82)) drop-shadow(0 0 4.8vh rgba(27,16,42,0.76))",
+                  "drop-shadow(0 0.45vh 0.7vh rgba(255,255,255,0.28)) drop-shadow(0 1vh 2.6vh rgba(0,0,0,0.78)) drop-shadow(0 0 3.4vh rgba(27,16,42,0.72))",
               }}
             />
             <motion.section
