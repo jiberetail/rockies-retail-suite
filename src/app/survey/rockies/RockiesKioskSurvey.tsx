@@ -51,13 +51,7 @@ const ROCKIES_PURPLE = "#4F2683";
 const ROCKIES_ICE = "#A9D9EE";
 const PRESS_DELAY_MS = 420;
 
-// Official Rockies/MLB-hosted preview. Keep remote until production footage rights are confirmed.
-const HUNTER_GOODMAN_VIDEO =
-  "https://mlb-cuts-diamond.mlb.com/FORGE/2026/2026-07/21/80de1348-62087735-515481a7-csvm-diamondgcp-asset_1280x720_59_4000K.mp4";
-const HUNTER_GOODMAN_POSTER =
-  "https://img.mlbstatic.com/mlb-images/image/upload/ar_16:9,g_auto,q_auto:good,w_1536,c_fill,f_jpg/mlb/puuefntyne6b66xu93wb";
-const HUNTER_GOODMAN_LOOP_START = 0.2;
-const HUNTER_GOODMAN_LOOP_END = 8.5;
+const ROCKIES_SPLASH_VIDEO = `${import.meta.env.BASE_URL}media/rockies-splash.mp4`;
 
 const languages = [
   { code: "English", label: "English" },
@@ -137,7 +131,7 @@ function Background({ intro = false }: { intro?: boolean }) {
     return (
       <>
         <img
-          src={HUNTER_GOODMAN_POSTER}
+          src={coorsField}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           style={{ filter: "blur(18px) saturate(1.12)", opacity: 0.52, transform: "scale(1.1)" }}
@@ -158,25 +152,16 @@ function Background({ intro = false }: { intro?: boolean }) {
               muted
               playsInline
               preload="auto"
-              poster={HUNTER_GOODMAN_POSTER}
-              aria-label="Hunter Goodman hits a go-ahead home run at Coors Field"
+              aria-label="Colorado Rockies cinematic splash video"
               className="rk-cinematic-video block h-auto w-full origin-center"
               style={{
                 filter: "saturate(1.2) contrast(1.15) brightness(0.9)",
                 opacity: 0.99,
                 willChange: "transform",
               }}
-              onLoadedMetadata={(event) => {
-                event.currentTarget.currentTime = HUNTER_GOODMAN_LOOP_START;
-              }}
-              onTimeUpdate={(event) => {
-                if (event.currentTarget.currentTime >= HUNTER_GOODMAN_LOOP_END) {
-                  event.currentTarget.currentTime = HUNTER_GOODMAN_LOOP_START;
-                }
-              }}
               onError={() => setVideoFailed(true)}
             >
-              <source src={HUNTER_GOODMAN_VIDEO} type="video/mp4" />
+              <source src={ROCKIES_SPLASH_VIDEO} type="video/mp4" />
             </video>
           </div>
         )}
