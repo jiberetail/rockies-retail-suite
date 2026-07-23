@@ -52,6 +52,7 @@ const ROCKIES_ICE = "#A9D9EE";
 const PRESS_DELAY_MS = 420;
 
 const ROCKIES_SPLASH_VIDEO = `${import.meta.env.BASE_URL}media/rockies-splash.mp4`;
+const ROCKIES_SURVEY_BACKGROUND_VIDEO = `${import.meta.env.BASE_URL}media/rockies-survey-background.mp4`;
 
 const languages = [
   { code: "English", label: "English" },
@@ -125,7 +126,9 @@ function useMutedVideo() {
 
 function Background({ intro = false }: { intro?: boolean }) {
   const videoRef = useMutedVideo();
+  const ambientVideoRef = useMutedVideo();
   const [videoFailed, setVideoFailed] = useState(false);
+  const [ambientVideoFailed, setAmbientVideoFailed] = useState(false);
 
   if (intro) {
     return (
@@ -172,11 +175,31 @@ function Background({ intro = false }: { intro?: boolean }) {
   return (
     <>
       <img src={coorsField} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ opacity: 0.7 }} />
+      {!ambientVideoFailed && (
+        <video
+          ref={ambientVideoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          aria-label="Colorado Rockies ambient survey background video"
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{
+            filter: "saturate(1.12) contrast(1.08) brightness(0.72)",
+            mixBlendMode: "screen",
+            opacity: 0.22,
+          }}
+          onError={() => setAmbientVideoFailed(true)}
+        >
+          <source src={ROCKIES_SURVEY_BACKGROUND_VIDEO} type="video/mp4" />
+        </video>
+      )}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(27,16,42,0.24), rgba(27,16,42,0.62)), rgba(79,38,131,0.12)",
+            "linear-gradient(to bottom, rgba(27,16,42,0.34), rgba(27,16,42,0.7)), rgba(79,38,131,0.16)",
         }}
       />
     </>
