@@ -138,9 +138,8 @@ function Background({ intro = false }: { intro?: boolean }) {
         />
         {!videoFailed && (
           <div
-            className="absolute left-1/2 top-0 max-w-none -translate-x-1/2 overflow-hidden"
+            className="absolute inset-0 overflow-hidden"
             style={{
-              width: "185%",
               WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)",
               maskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)",
             }}
@@ -153,9 +152,9 @@ function Background({ intro = false }: { intro?: boolean }) {
               playsInline
               preload="auto"
               aria-label="Colorado Rockies cinematic splash video"
-              className="rk-cinematic-video block h-auto w-full origin-center"
+              className="rk-cinematic-video block h-full w-full origin-center object-cover"
               style={{
-                filter: "saturate(1.2) contrast(1.15) brightness(0.9)",
+                filter: "saturate(1.12) contrast(1.08) brightness(0.98)",
                 opacity: 0.99,
                 willChange: "transform",
               }}
