@@ -174,7 +174,7 @@ function Background({ intro = false }: { intro?: boolean }) {
 
   return (
     <>
-      <img src={coorsField} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ opacity: 0.7 }} />
+      <img src={coorsField} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ opacity: 0.25 }} />
       {!ambientVideoFailed && (
         <video
           ref={ambientVideoRef}
@@ -186,9 +186,8 @@ function Background({ intro = false }: { intro?: boolean }) {
           aria-label="Colorado Rockies ambient survey background video"
           className="absolute inset-0 h-full w-full object-cover"
           style={{
-            filter: "saturate(1.12) contrast(1.08) brightness(0.72)",
-            mixBlendMode: "screen",
-            opacity: 0.22,
+            filter: "saturate(1.16) contrast(1.08) brightness(0.78)",
+            opacity: 0.55,
           }}
           onError={() => setAmbientVideoFailed(true)}
         >
@@ -199,7 +198,7 @@ function Background({ intro = false }: { intro?: boolean }) {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(27,16,42,0.34), rgba(27,16,42,0.7)), rgba(79,38,131,0.16)",
+            "linear-gradient(to bottom, rgba(27,16,42,0.26), rgba(27,16,42,0.66)), rgba(79,38,131,0.12)",
         }}
       />
     </>
