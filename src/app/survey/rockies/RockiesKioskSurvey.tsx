@@ -137,13 +137,7 @@ function Background({ intro = false }: { intro?: boolean }) {
           style={{ filter: "blur(18px) saturate(1.12)", opacity: 0.52, transform: "scale(1.1)" }}
         />
         {!videoFailed && (
-          <div
-            className="absolute inset-0 overflow-hidden"
-            style={{
-              WebkitMaskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)",
-              maskImage: "linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%)",
-            }}
-          >
+          <div className="absolute inset-0 overflow-hidden">
             <video
               ref={videoRef}
               autoPlay
@@ -168,7 +162,7 @@ function Background({ intro = false }: { intro?: boolean }) {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 78% 45% at 50% 24%, transparent 38%, rgba(15,7,25,0.52) 100%), linear-gradient(108deg, rgba(79,38,131,0.16) 0%, transparent 36%, rgba(169,217,238,0.08) 100%), linear-gradient(to bottom, rgba(10,5,18,0.34) 0%, rgba(10,5,18,0.02) 22%, rgba(10,5,18,0.13) 43%, rgba(27,16,42,0.78) 59%, rgba(27,16,42,0.97) 72%, rgba(27,16,42,1) 100%)",
+              "radial-gradient(ellipse 78% 45% at 50% 24%, transparent 34%, rgba(15,7,25,0.48) 100%), linear-gradient(108deg, rgba(79,38,131,0.14) 0%, transparent 36%, rgba(169,217,238,0.08) 100%), linear-gradient(to bottom, rgba(10,5,18,0.2) 0%, rgba(10,5,18,0.1) 30%, rgba(14,8,22,0.6) 52%, rgba(15,8,25,0.9) 70%, rgba(15,8,25,0.96) 100%)",
           }}
         />
       </>
@@ -502,13 +496,11 @@ export function RockiesKioskSurvey() {
               transition={{ delay: 0.1, duration: 0.58, ease: "easeOut" }}
               className="rk-welcome-panel absolute inset-x-0 bottom-0 z-10 text-center"
               style={{
-                borderTop: `0.65vh solid ${ROCKIES_ICE}`,
-                borderRadius: "8px 8px 0 0",
-                background: "linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 74%, #F6F3F9 100%)",
-                boxShadow: "0 -2.2vh 5vh rgba(27,16,42,0.36)",
+                background: "transparent",
+                textShadow: "0 0.35vh 1.2vh rgba(0,0,0,0.72)",
               }}
             >
-              <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-t-[8px]">
+              <div aria-hidden="true" className="hidden">
                 <div
                   className="absolute inset-0"
                   style={{
@@ -532,7 +524,7 @@ export function RockiesKioskSurvey() {
                 src={rockiesLogo}
                 alt=""
                 aria-hidden="true"
-                className="pointer-events-none absolute -right-[11%] bottom-[4%] w-[55%]"
+                className="hidden"
                 style={{ opacity: 0.035 }}
               />
               <motion.div
@@ -561,8 +553,8 @@ export function RockiesKioskSurvey() {
                   transition={{ delay: 0.32, duration: 0.45 }}
                   className="flex w-full items-center justify-center gap-[3%]"
                 >
-                  <span style={{ width: "9%", height: 2, background: ROCKIES_PURPLE }} />
-                  <p className="rk-welcome-kicker whitespace-nowrap font-black uppercase" style={{ color: ROCKIES_DARK, fontSize: "1.08em", lineHeight: 1 }}>
+                  <span style={{ width: "9%", height: 2, background: ROCKIES_ICE }} />
+                  <p className="rk-welcome-kicker whitespace-nowrap font-black uppercase" style={{ color: "#FFFFFF", fontSize: "1.08em", lineHeight: 1 }}>
                     Colorado Rockies Dugout Store
                   </p>
                   <span style={{ width: "9%", height: 2, background: ROCKIES_ICE }} />
@@ -572,12 +564,12 @@ export function RockiesKioskSurvey() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.25, duration: 0.52, ease: "easeOut" }}
                   className="rk-welcome-title mt-[3%] font-black uppercase"
-                  style={{ color: ROCKIES_DARK, fontSize: "5em", lineHeight: 0.88 }}
+                  style={{ color: "#FFFFFF", fontSize: "5em", lineHeight: 0.88 }}
                 >
                   <motion.span className="block whitespace-nowrap" initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.48, ease: "easeOut" }}>
                     Step up to
                   </motion.span>
-                  <motion.span className="block whitespace-nowrap" style={{ color: ROCKIES_PURPLE }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4, duration: 0.48, ease: "easeOut" }}>
+                  <motion.span className="block whitespace-nowrap" style={{ color: ROCKIES_ICE }} initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4, duration: 0.48, ease: "easeOut" }}>
                     the plate.
                   </motion.span>
                 </motion.h1>
@@ -586,12 +578,11 @@ export function RockiesKioskSurvey() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.38, duration: 0.48, ease: "easeOut" }}
                   className="rk-welcome-offer mt-[3%] max-w-full font-bold"
-                  style={{ color: ROCKIES_DARK, fontSize: "1.42em", lineHeight: 1.18 }}
+                  style={{ color: "#FFFFFF", fontSize: "1.42em", lineHeight: 1.18 }}
                 >
                   <span className="block whitespace-nowrap">Take the Dugout Store survey and catch a</span>
-                  <span className="block whitespace-nowrap"><span style={{ color: ROCKIES_PURPLE }}>10% discount</span> on your next in-store purchase!</span>
+                  <span className="block whitespace-nowrap"><span style={{ color: ROCKIES_ICE }}>10% discount</span> on your next in-store purchase!</span>
                 </motion.p>
-                <div className="flex-1" />
                 <motion.button
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0, scale: [1, 1, 1.025, 1] }}
@@ -602,12 +593,12 @@ export function RockiesKioskSurvey() {
                   }}
                   data-testid="start-survey"
                   onClick={() => pressThen("start-survey", () => navigateTo("language"))}
-                  className="rk-welcome-cta relative flex w-[86%] items-center justify-center gap-[3%] overflow-hidden rounded-[8px] border-2 py-[1.45vh] font-black uppercase text-white"
+                  className="rk-welcome-cta relative mt-[5%] flex w-[86%] items-center justify-center gap-[3%] overflow-hidden rounded-[8px] border-2 py-[1.45vh] font-black uppercase text-white"
                   style={{
-                    background: isPressed("start-survey") ? ROCKIES_PURPLE : ROCKIES_DARK,
-                    borderColor: ROCKIES_PURPLE,
+                    background: isPressed("start-survey") ? ROCKIES_DARK : ROCKIES_PURPLE,
+                    borderColor: "#FFFFFF",
                     fontSize: "1.9em",
-                    boxShadow: "0 1.1vh 2.8vh rgba(27,16,42,0.24)",
+                    boxShadow: "0 1.1vh 3vh rgba(0,0,0,0.45)",
                   }}
                 >
                   <span aria-hidden="true" className="absolute inset-y-0 left-0 w-[1.1vh]" style={{ background: ROCKIES_ICE }} />
